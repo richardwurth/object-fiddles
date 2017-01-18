@@ -5,7 +5,12 @@
 
   //Code here
 
+var me = {
+  name: "Richard",
+  age: 25
+}
 
+alert(me.name);
 
 
 //NEXT PROBLEM
@@ -17,17 +22,28 @@
 
   //Code here
 
+var favoriteThings = {
+  band: "Brand New",
+  food: "Asado",
+  person: "My wife",
+  book: "Sword of Truth series, by Terry Goodking",
+  movie: "Inception",
+  holiday: "Christmas"
+};
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
   //Code here
 
+favoriteThings.car = "1988 Ford Taurus";
+favoriteThings.brand = "Kellogs";
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
   //Code here
 
-
+favoriteThings.food = "Lettuce";
+favoriteThings.book = "50 Shades of Gray";
 
 
 //NEXT PROBLEM
@@ -44,9 +60,18 @@ that is named color, with the value being the color of your backpack. */
 
   //Code here
 
+  var backPack = {
+  };
+
+  var item = "firstPocket";
+  backPack[item] = 'chapstick';
+  backPack.color = "black";
+
 //After you do the above, alert your entire backPack object.
 
   //Code here
+
+alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
@@ -55,10 +80,9 @@ Instead, console.log your whole backPack object and then check out the console. 
   //Code here
 
 
-
+console.log(backPack);
 
 //NEXT PROBLEM
-
 
 
 
@@ -66,11 +90,28 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+  var alsoMe = {
+    name: "Richard",
+    age: 25,
+    height: "6 foot 1 inch",
+    gender: "Male",
+    married: true,
+    eyeColor: "Hazel",
+    hairColor: "Dark Brown"
+  }
+
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
+
 
   //Code Here
 
+function loop (object) {
+  for (var i in alsoMe) {
+    alert(alsoMe[i]);
+  }
+}
 
+loop(alsoMe);
 
 
 //NEXT PROBLEM
@@ -82,11 +123,25 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var album = {
+  myPoorCat: "2 minutes and 28 seconds",
+  myFarmerTan: "5 minutes and 12 seconds",
+  tractorBeam: "2 minutes and 55 seconds",
+  derDerDer: "3 minutes and 12 seconds",
+  learningIsFun: "5 minutes and 15 seconds"
+};
+
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
 
+function showTracks (placeholder) {
+  for (var i in placeholder) {
+    alert((i));
+  }
+}
 
+showTracks(album);
 
 
 //NEXT PROBLEM
@@ -98,12 +153,27 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var states = {
+  california: 2549432,
+  newYork: 569283,
+  utah: 6029,
+  florida: 5829204,
+  southDakota: 8
+}
+
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
 
+  function populationCheck (num) {
+    for (var i in states) {
+      if (states[i] >= 30000 ) {
+        alert(i);
+      }
+    }
+  }
 
-
+populationCheck(states);
 
 //NEXT PROBLEM
 
@@ -123,11 +193,26 @@ that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
 
+function lieDetector (question) {
+  for (var i in question) {
+    if (!question[i]) {
+      delete question[i];
+    }
+  }
+}
+
+lieDetector(user1);
+console.log(user1);
+
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
 
+user1.name = "Richard Wurth";
+user1.pwHash = "I'M NOT TELLING YOU MY PASSWORD";
+user1.username = "richard@richard.com";
 
+console.log(user1);
 
 
 //NEXT PROBLEM
@@ -151,11 +236,14 @@ var user2 = {
 
   //Code Here
 
+user2.name = "Tyler S. McGinnis";
+user2.email = "tyler.mcginnis@devmounta.in";
+
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
 
-
+user2.sayEmail();
 
 
 //NEXT PROBLEM
@@ -167,16 +255,32 @@ var user2 = {
 
   //Code Here
 
+  var methodCollection = {
+  }
+
+
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
 
+methodCollection.alertHello = function alertHello () {
+    alert("hello");
+  };
+
+methodCollectionfunction.logHello = logHello () {
+    console.log("hello");
+  };
+
+  console.log(methodCollection);
+
 //Now call your alertHello and logHello methods.
 
   //Code Here
 
+  methodCollection.alertHello();
+  methodCollection.logHello();
 
 
 //NEXT PROBLEM
