@@ -256,7 +256,7 @@ user2.sayEmail();
   //Code Here
 
   var methodCollection = {
-  }
+  };
 
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
@@ -265,23 +265,22 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
   //Code Here
 
-methodCollection.alertHello = function alertHello () {
+function method(insertHere) {
+  insertHere.alertHello = function () {
     alert("hello");
-  };
-
-methodCollectionfunction.logHello = logHello () {
+  }
+  insertHere.logHello = function () {
     console.log("hello");
-  };
-
-  console.log(methodCollection);
+  }
+}
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
 
-  methodCollection.alertHello();
-  methodCollection.logHello();
-
+method(methodCollection);
+methodCollection.alertHello();
+methodCollection.logHello();
 
 //NEXT PROBLEM
 
@@ -292,7 +291,13 @@ methodCollectionfunction.logHello = logHello () {
 
   //Code Here
 
+function makePerson (name,birthday,ssn) {
+  this.fullName = name;
+  this.dob = birthday;
+  this.social = ssn;
+}
 
+var me = new makePerson("Richard Wurth","May 10th, 1991", "xxx-xx-xxxx");
 
 //NEXT PROBLEM
 
@@ -302,7 +307,16 @@ methodCollectionfunction.logHello = logHello () {
 
   //Code Here
 
+function makeCard (cardNumber, expirationDate, securityCode) {
+    this.number = cardNumber;
+    this.expiration = expirationDate;
+    this.security = securityCode;
+  }
 
+
+var first = new makeCard(197548, "May 1991", 289);
+// console.log(makeCard(849521, "June 1st", 492));
+console.log(first);
 
 //NEXT PROBLEM
 
@@ -314,3 +328,16 @@ methodCollectionfunction.logHello = logHello () {
 */
 
   //Code Here
+
+function bindCard (person, card) {
+  var result = [];
+  for (var i in person) {
+    result += " " + person[i] + ". ";
+  }
+  for (var j in card) {
+    result += " " + card[j] +". ";
+  }
+  return result;
+}
+
+console.log(bindCard (me, first));
